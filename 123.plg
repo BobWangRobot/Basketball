@@ -1,0 +1,21 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\bob\Desktop\新建文件夹\123.uvproj
+Project File Date:  12/29/2016
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling 116.c...
+linking...
+Program Size: data=20.0 xdata=0 code=1031
+creating hex file from "123"...
+"123" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling 116.c...
+linking...
+Program Size: data=20.0 xdata=0 code=1031
+creating hex file from "123"...
+"123" - 0 Error(s), 0 Warning(s).

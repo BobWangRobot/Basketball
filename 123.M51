@@ -1,0 +1,348 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/29/2016  20:23:57  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE 116.obj TO 123 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  116.obj (116)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?SIDIV)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CCASE)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?UIDIV)
+
+
+LINK MAP OF MODULE:  123 (116)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000BH     UNIT         ?DT?116
+            IDATA   0013H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     07F2H                  *** GAP ***
+            CODE    0800H     00DEH     UNIT         ?PR?MAIN?116
+            CODE    08DEH     00B1H     UNIT         ?C?LIB_CODE
+            CODE    098FH     00B0H     UNIT         ?PR?_DISPLAY?116
+            CODE    0A3FH     008CH     UNIT         ?C_C51STARTUP
+            CODE    0ACBH     007AH     UNIT         ?PR?T0_INT?116
+            CODE    0B45H     0032H     UNIT         ?PR?RECV_BYTE?116
+            CODE    0B77H     002FH     UNIT         ?PR?_SEND_BYTE?116
+            CODE    0BA6H     0026H     UNIT         ?PR?_DELAY_MS?116
+            CODE    0BCCH     0018H     UNIT         ?C_INITSEG
+            CODE    0BE4H     000CH     UNIT         ?PR?TIME?116
+            CODE    0BF0H     000AH     UNIT         ?PR?_WRITE_HD7279?116
+            CODE    0BFAH     0007H     UNIT         ?PR?_READ_HD7279?116
+
+
+
+OVERLAY MAP OF MODULE:   123 (116)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?PR?T0_INT?116
+  +--> ?PR?_DISPLAY?116
+  +--> ?PR?_SEND_BYTE?116
+
+?PR?_DISPLAY?116
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/29/2016  20:23:57  PAGE 2
+
+
+  +--> ?PR?_WRITE_HD7279?116
+
+?PR?_WRITE_HD7279?116
+  +--> ?PR?_SEND_BYTE?116
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP
+  +--> ?PR?MAIN?116
+  +--> ?C_INITSEG
+
+?PR?MAIN?116
+  +--> ?PR?_SEND_BYTE?116
+  +--> ?PR?_DELAY_MS?116
+  +--> ?PR?TIME?116
+  +--> ?PR?_READ_HD7279?116
+
+?PR?_READ_HD7279?116
+  +--> ?PR?_SEND_BYTE?116
+  +--> ?PR?RECV_BYTE?116
+
+
+
+SYMBOL TABLE OF MODULE:  123 (116)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        116
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  B:00A0H.2       PUBLIC        HD7279A_CS
+  B:0090H.2       PUBLIC        HD7279A_DATA
+  C:0BFAH         PUBLIC        _read_hd7279
+  C:0800H         PUBLIC        main
+  C:0ACBH         PUBLIC        T0_int
+  C:0BE4H         PUBLIC        time
+  C:0BA6H         PUBLIC        _Delay_ms
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:0BF0H         PUBLIC        _write_hd7279
+  C:0B77H         PUBLIC        _send_byte
+  C:0B45H         PUBLIC        recv_byte
+  B:00A8H.1       PUBLIC        ET0
+  D:008CH         PUBLIC        TH0
+  D:0008H         PUBLIC        score1
+  D:008AH         PUBLIC        TL0
+  D:000AH         PUBLIC        score2
+  B:0088H.4       PUBLIC        TR0
+  D:000CH         PUBLIC        a
+  B:0090H.1       PUBLIC        HD7279A_CLK
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/29/2016  20:23:57  PAGE 3
+
+
+  D:00C8H         PUBLIC        T2CON
+  D:000EH         PUBLIC        i
+  D:000FH         PUBLIC        change
+  D:0011H         PUBLIC        s
+  B:0090H.3       PUBLIC        HD7279A_KEY
+  C:098FH         PUBLIC        _display
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _SEND_BYTE
+  D:0007H         SYMBOL        c
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0005H         SYMBOL        j
+  D:0005H         SYMBOL        k
+  -------         ENDDO         
+  C:0B77H         LINE#         36
+  C:0B77H         LINE#         37
+  C:0B77H         LINE#         39
+  C:0B79H         LINE#         40
+  C:0B7BH         LINE#         41
+  C:0B7DH         LINE#         42
+  C:0B7DH         LINE#         44
+  C:0B81H         LINE#         46
+  C:0B83H         LINE#         47
+  C:0B83H         LINE#         48
+  C:0B87H         LINE#         49
+  C:0B87H         LINE#         50
+  C:0B89H         LINE#         51
+  C:0B8BH         LINE#         53
+  C:0B8BH         LINE#         54
+  C:0B8DH         LINE#         55
+  C:0B8DH         LINE#         57
+  C:0B8FH         LINE#         59
+  C:0B91H         LINE#         60
+  C:0B91H         LINE#         62
+  C:0B95H         LINE#         64
+  C:0B97H         LINE#         66
+  C:0B99H         LINE#         67
+  C:0B99H         LINE#         69
+  C:0B9DH         LINE#         71
+  C:0BA1H         LINE#         72
+  C:0BA5H         LINE#         74
+  -------         ENDPROC       _SEND_BYTE
+  -------         PROC          RECV_BYTE
+  -------         DO            
+  D:0007H         SYMBOL        ret
+  D:0006H         SYMBOL        i
+  D:0005H         SYMBOL        j
+  D:0005H         SYMBOL        k
+  -------         ENDDO         
+  C:0B45H         LINE#         78
+  C:0B45H         LINE#         79
+  C:0B45H         LINE#         82
+  C:0B47H         LINE#         83
+  C:0B49H         LINE#         84
+  C:0B4BH         LINE#         85
+  C:0B4BH         LINE#         86
+  C:0B4CH         LINE#         87
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/29/2016  20:23:57  PAGE 4
+
+
+  C:0B50H         LINE#         88
+  C:0B52H         LINE#         89
+  C:0B52H         LINE#         90
+  C:0B54H         LINE#         91
+  C:0B56H         LINE#         92
+  C:0B56H         LINE#         93
+  C:0B57H         LINE#         94
+  C:0B5BH         LINE#         95
+  C:0B5FH         LINE#         96
+  C:0B65H         LINE#         97
+  C:0B67H         LINE#         98
+  C:0B69H         LINE#         99
+  C:0B69H         LINE#         100
+  C:0B6AH         LINE#         101
+  C:0B6EH         LINE#         102
+  C:0B72H         LINE#         103
+  C:0B74H         LINE#         104
+  C:0B76H         LINE#         105
+  C:0B76H         LINE#         106
+  -------         ENDPROC       RECV_BYTE
+  -------         PROC          _WRITE_HD7279
+  D:0007H         SYMBOL        cmd
+  D:0004H         SYMBOL        dat
+  C:0BF0H         LINE#         108
+  C:0BF2H         LINE#         109
+  C:0BF2H         LINE#         110
+  C:0BF5H         LINE#         111
+  -------         ENDPROC       _WRITE_HD7279
+  -------         PROC          _READ_HD7279
+  D:0007H         SYMBOL        cmd
+  C:0BFAH         LINE#         114
+  C:0BFAH         LINE#         115
+  C:0BFAH         LINE#         116
+  C:0BFDH         LINE#         117
+  C:0C00H         LINE#         118
+  -------         ENDPROC       _READ_HD7279
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        Ms
+  -------         DO            
+  D:0002H         SYMBOL        us
+  D:0004H         SYMBOL        usn
+  -------         ENDDO         
+  C:0BA6H         LINE#         6
+  C:0BA6H         LINE#         7
+  C:0BA6H         LINE#         9
+  C:0BAAH         LINE#         10
+  C:0BAAH         LINE#         11
+  C:0BAEH         LINE#         12
+  C:0BAEH         LINE#         13
+  C:0BAEH         LINE#         14
+  C:0BB2H         LINE#         15
+  C:0BBBH         LINE#         16
+  C:0BC0H         LINE#         17
+  C:0BC4H         LINE#         18
+  C:0BC9H         LINE#         19
+  C:0BCBH         LINE#         20
+  -------         ENDPROC       _DELAY_MS
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/29/2016  20:23:57  PAGE 5
+
+
+  -------         PROC          TIME
+  C:0BE4H         LINE#         21
+  C:0BE4H         LINE#         22
+  C:0BE4H         LINE#         23
+  C:0BE7H         LINE#         24
+  C:0BEAH         LINE#         25
+  C:0BEDH         LINE#         26
+  C:0BEFH         LINE#         27
+  -------         ENDPROC       TIME
+  -------         PROC          _DISPLAY
+  D:0002H         SYMBOL        s
+  C:098FH         LINE#         28
+  C:0993H         LINE#         29
+  C:0993H         LINE#         30
+  C:09ACH         LINE#         31
+  C:09CBH         LINE#         32
+  C:09E2H         LINE#         33
+  C:09FBH         LINE#         34
+  C:0A0DH         LINE#         35
+  C:0A1DH         LINE#         36
+  C:0A2FH         LINE#         37
+  -------         ENDPROC       _DISPLAY
+  -------         PROC          T0_INT
+  C:0ACBH         LINE#         39
+  C:0AE2H         LINE#         41
+  C:0AE5H         LINE#         42
+  C:0AE8H         LINE#         43
+  C:0AEAH         LINE#         44
+  C:0AF1H         LINE#         45
+  C:0AF8H         LINE#         46
+  C:0AF8H         LINE#         47
+  C:0AFBH         LINE#         48
+  C:0B0DH         LINE#         49
+  C:0B17H         LINE#         50
+  C:0B23H         LINE#         51
+  C:0B2AH         LINE#         53
+  C:0B30H         LINE#         54
+  C:0B30H         LINE#         55
+  -------         ENDPROC       T0_INT
+  -------         PROC          MAIN
+  -------         DO            
+  D:0001H         SYMBOL        j
+  -------         ENDDO         
+  C:0800H         LINE#         56
+  C:0800H         LINE#         57
+  C:0800H         LINE#         59
+  C:0805H         LINE#         60
+  C:080CH         LINE#         61
+  C:0810H         LINE#         62
+  C:0812H         LINE#         63
+  C:0814H         LINE#         64
+  C:0817H         LINE#         65
+  C:0817H         LINE#         66
+  C:0817H         LINE#         67
+  C:081AH         LINE#         68
+  C:081AH         LINE#         69
+  C:0821H         LINE#         70
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/29/2016  20:23:57  PAGE 6
+
+
+  C:0853H         LINE#         71
+  C:0853H         LINE#         72
+  C:085DH         LINE#         73
+  C:0861H         LINE#         74
+  C:086EH         LINE#         75
+  C:0878H         LINE#         76
+  C:0882H         LINE#         77
+  C:0886H         LINE#         78
+  C:0893H         LINE#         79
+  C:089DH         LINE#         80
+  C:08A1H         LINE#         81
+  C:08AEH         LINE#         82
+  C:08B5H         LINE#         83
+  C:08BDH         LINE#         84
+  C:08BDH         LINE#         85
+  C:08BDH         LINE#         86
+  C:08C3H         LINE#         87
+  C:08C9H         LINE#         88
+  C:08CFH         LINE#         89
+  C:08CFH         LINE#         90
+  C:08D1H         LINE#         91
+  C:08D6H         LINE#         92
+  C:08D6H         LINE#         93
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        116
+
+  -------         MODULE        ?C?SIDIV
+  C:08DEH         PUBLIC        ?C?SIDIV
+  -------         ENDMOD        ?C?SIDIV
+
+  -------         MODULE        ?C?CCASE
+  C:0914H         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+  -------         MODULE        ?C?UIDIV
+  C:093AH         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 02C6H BYTE (34%) *
+******************************************************************************
+
+Program Size: data=20.0 xdata=0 code=1031
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
